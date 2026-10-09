@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="sq-XK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16091f">
+<title>Sa Mirë e Njeh Artin? 💌</title>
+<style>
+:root{--bg:#100817;--pink:#ff5fba;--rose:#ff9acb;--white:#fff6fc;--muted:#d6bfd3}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;padding:20px;display:grid;place-items:center;background:radial-gradient(ellipse at 15% 0%,#482044 0,transparent 38%),radial-gradient(ellipse at 100% 100%,#2b174a 0,transparent 38%),var(--bg);color:var(--white);font-family:ui-rounded,"Segoe UI",system-ui,sans-serif}
+main{width:min(760px,100%);position:relative;overflow:hidden;border:1px solid #a14b8c;border-radius:28px;background:linear-gradient(150deg,#21112bfa,#130a1cf7);box-shadow:0 20px 80px #0008,0 0 36px #ff5fba17;padding:clamp(22px,5vw,46px)}
+main:before,main:after{content:"♡";position:absolute;color:#ff79c6;opacity:.22;font-size:70px;pointer-events:none}main:before{top:10px;right:20px}main:after{bottom:8px;left:12px;font-size:48px}.content{position:relative;z-index:1}
+.eyebrow{text-transform:uppercase;letter-spacing:.15em;color:var(--rose);font-size:.72rem;font-weight:800}.brand{font-size:clamp(2rem,7vw,3.5rem);line-height:1.08;letter-spacing:-.04em;margin:13px 0;color:#fff0fa}.gradient{background:linear-gradient(90deg,#ff8dce,#ffe0ee,#c7a0ff);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{color:var(--muted);line-height:1.7;font-size:1.02rem;max-width:580px}.hearts{font-size:1.35rem;letter-spacing:.25em;margin:18px 0}
+.button{border:0;border-radius:999px;padding:14px 23px;background:linear-gradient(100deg,#ff4eaa,#c65cff);color:white;font-weight:850;font-size:1rem;cursor:pointer;box-shadow:0 8px 26px #ff4eaa30;transition:transform .18s,filter .18s}.button:hover{filter:brightness(1.1);transform:translateY(-2px)}.button:focus-visible,.option:focus-visible{outline:3px solid #ffd6a5;outline-offset:3px}.button.secondary{background:#321d3c;border:1px solid #87527e;box-shadow:none}.small{font-size:.84rem;color:#bca3bc;line-height:1.5;margin-top:17px}.start{padding:clamp(8px,3vw,22px) 0}.start .button{margin-top:12px}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:12px}.pill{border:1px solid #73466f;color:#ffd0e8;border-radius:99px;padding:7px 11px;font-size:.83rem;white-space:nowrap}.track{height:7px;border-radius:99px;background:#38243e;overflow:hidden;margin:18px 0 28px}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--pink),#c38bff);transition:width .35s}.question{font-size:clamp(1.25rem,4vw,1.8rem);line-height:1.35;margin:0 0 20px}.hint{color:#c6a9c7;font-size:.9rem;margin:-8px 0 18px}.options{display:grid;gap:11px}.option{display:flex;align-items:center;gap:12px;text-align:left;width:100%;border:1px solid #634061;border-radius:16px;background:#160d20;color:var(--white);padding:14px 16px;font-size:1rem;cursor:pointer;transition:.18s}.option:hover:not(:disabled){border-color:var(--pink);background:#2a1530;transform:translateY(-1px)}.letter{display:grid;place-items:center;flex:0 0 30px;height:30px;border-radius:50%;background:#39213d;color:#ffb3dd;font-weight:800;font-size:.86rem}.option.selected{border-color:#ff79c6;background:#3a1937;box-shadow:0 0 18px #ff5fba22}.option:disabled{cursor:default}.feedback{display:none;margin-top:18px;padding:18px;border-radius:18px;text-align:center;border:1px solid #87518a;background:#24132d}.feedback.show{display:block;animation:appear .25s ease}.reaction{font-size:2.25rem;letter-spacing:.08em}.feedback h3{margin:6px 0;color:#ffacd8}.feedback p{margin:0;color:#e4cfe4;line-height:1.55}.controls{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:22px}.score-note{color:#c4a8c5;font-size:.88rem}.result{text-align:center;padding:10px 0}.result .big{font-size:4rem}.result h2{font-size:clamp(1.8rem,6vw,2.6rem);margin:8px 0}.result p{color:var(--muted);line-height:1.7;max-width:550px;margin:12px auto 24px}.hidden{display:none!important}.footer{font-size:.78rem;color:#a98da9;margin-top:22px;text-align:center}
+@keyframes appear{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main><div class="content">
+<section id="welcome" class="start">
+ <div class="eyebrow">Një ftesë e vogël • veç për ty</div>
+ <div class="hearts">♡ 💌 ✨ ♡</div>
+ <h1 class="brand">Hajt pra…<br>sa mirë e njeh <span class="gradient">Artin?</span></h1>
+ <p class="lead">Pak flirt, pak kureshtje, edhe do pytje për mu. 💗 Bone këtë kuiz të vogël e kqyre a e kemi të njejtën kimi… a mos po ta kam borxh një prezantim ma të mirë.</p>
+ <div class="hearts">😏 💋 🌹 🦋</div>
+ <button class="button" id="startBtn">Hape kuizin tem 💌</button>
+ <p class="small">10 pytje · do befasi · pa stres hiç.<br>Veç për me ta bo ditën pak ma të mirë. ♡</p>
+</section>
+<section id="quiz" class="hidden">
+ <div class="topline"><span class="eyebrow">Kuizi i Artit 💘</span><span class="pill" id="counter">Pytja 1 prej 10</span></div>
+ <div class="track"><div class="fill" id="progress"></div></div>
+ <h2 class="question" id="question"></h2><p class="hint">Zgjedhe atë që ta thotë zemra, bukuroshe. ✨</p>
+ <div class="options" id="options"></div>
+ <div class="feedback" id="feedback" aria-live="polite"><div class="reaction" id="reaction">💋✨😈</div><h3 id="feedbackTitle"></h3><p id="feedbackText"></p></div>
+ <div class="controls"><span class="score-note" id="scoreNote">Pikët po mblidhen fshehtas…</span><button class="button" id="nextBtn" disabled>Tjetra 💗</button></div>
+</section>
+<section id="result" class="result hidden">
+ <div class="big" id="resultEmoji">💌💖✨</div><div class="eyebrow">Rezultati yt i vogël</div><h2 id="resultTitle"></h2><p id="resultText"></p>
+ <button class="button" id="againBtn">Luaje prapë ↻</button>
+ <button class="button secondary" id="shareBtn">Kopjo ftesën 💌</button>
+ <p class="small" id="shareStatus" aria-live="polite"></p>
+</section>
+<div class="footer">Pak sharm bon punë. Rri vetvetja, me zemër të mirë. ♡</div>
+</div></main>
+<script>
+const questions = [
+ {q:"Çfarë tipi osht Arti?",a:["Tip që s’e ka problem me marrë iniciativë","Tip i qetë që rrin veç me libra","Perfeksionist për çdo sen","Tip që flen tanë ditën"],correct:0,flirt:"Vetëbesimi osht atraktiv… po mirësia osht edhe ma e fortë. 😉"},
+ {q:"Çfarë tipi femnash i pëlqen Artit?",a:["Latina edhe qika të shpisë","Vajza që lexojnë e lujnë lojëra","Sportiste edhe artiste","Vajza të turpshme"],correct:0,flirt:"Secili e ka tipin e vet, po lidhja e mirë osht ma shumë se veç një listë. 💗"},
+ {q:"Cilën përgjigje e ka zgjedh Arti për pozitën e preferume?",a:["Doggy style","Cowgirl","69","Të gjitha"],correct:3,flirt:"E kape përgjigjen pak ma guximtare. Mbaje flirtin me respekt. 😏"},
+ {q:"Çka ka ma shumë rëndësi për Artin te një femën?",a:["Stili","Paraja","Mendja","Popullariteti"],correct:2,flirt:"Mendja e mprehtë edhe muhabeti i mirë? Shumë atraktive. 🧠💘"},
+ {q:"Qysh i pëlqen Artit me e thirrë?",a:["Shef","Daddy, Papi, Papasito","Mbret","Shok i ngushtë"],correct:1,flirt:"Përgjigje e guximshme, bukuroshe. Veç sigurohu që edhe tjetrit i pëlqejnë nofkat. 💋"},
+ {q:"Qysh kish me qenë takimi ideal për Artin?",a:["Ushqim i mirë edhe muhabet deri vonë","Klub i zhurmshëm pa fol hiq","Takim si në zyrë","Me kry punë me nxitim"],correct:0,flirt:"Ushqim i mirë, të qeshura, edhe muhabet që zgjat deri vonë. Kjo osht atmosferë. 🥂"},
+ {q:"Çka e bon muhabetin me qenë i paharrum?",a:["Me e dëgju njani-tjetrin me vëmendje","Me dashtë me fitu çdo debat","Me fol veç për veti","Me kthy përgjigje veç me një fjalë"],correct:0,flirt:"Me u ndi i/e dëgjume osht diçka shumë e vlefshme. 💞"},
+ {q:"Zgjedhe një moment romantik.",a:["Shëtitje natën edhe muhabet prej zemrës","Me garu për çdo sen","Me nejt në telefon pa fol","Me ngut për çdo sen"],correct:0,flirt:"Momentet e vogla shpesh bohen kujtimet ma të mira. 🌙"},
+ {q:"Cila osht shenjë e mirë në një lidhje?",a:["Respekt, sinqeritet edhe komunikim","Xhelozi si dëshmi e dashnisë","Me i injoru kufijtë","Me lujt lojna me ndjenja"],correct:0,flirt:"Respekti edhe sinqeriteti janë gjithmonë atraktivë. 💚"},
+ {q:"Nëse kimia osht e dyanshme, çka bon?",a:["Rri vetvetja edhe e sheh ku po shkon","Shtirresh si dikush tjetër","E shtyn tjetrin me zor","Mendon që tjetri ta ka borxh një shans"],correct:0,flirt:"Përgjigjja ma e mirë: rri i sinqertë, kalo mirë, edhe leje kiminë me ardhë natyrshëm. 🦋"},
+ {q:"💋 Qysh kish pasë qejf Arti me nisë një moment romantik?",a:["Me një puthje spontane","Me një kompliment flirtues","Me një takim romantik","Me mesazhe të nxehta gjatë natës"],correct:0,flirt:"Një puthje spontane, kur të dy e duan… kjo e ndez momentin. 💋"},
+ {q:"🔥 Çfarë lloj flirti i pëlqen ma shumë Artit?",a:["I ëmbël edhe romantik","I guximshëm edhe pak provokues","Me shikime e buzëqeshje","Me ngacmime e batuta"],correct:1,flirt:"Flirti pak guximtar e provokues e mban shkëndijën gjallë. 😈"},
+ {q:"👀 Çka kish bo Arti nëse një qikë që i pëlqen ia kthen flirtin?",a:["E vazhdon flirtin edhe ma shumë","E fton me dalë në takim","Bëhet pak i turpshëm","Pret me pa a ka kimi të vërtetë"],correct:0,flirt:"Nëse ajo ia kthen flirtin, Arti e vazhdon lojën edhe ma shumë. 😉"},
+ {q:"🫦 Çka kish pasë ma shumë qejf Arti në një takim privat me qikën që i pëlqen?",a:["Muhabet të afërt e flirtues","Puthje, nëse të dy e dëshirojnë","Përqafime e momente romantike","Pak prej krejtve, varësisht prej kimisë"],correct:3,flirt:"Pak prej krejtve, varësisht prej kimisë dhe çka ju pëlqen të dyve. 💞"}
+];
+const reactions=[
+ {emoji:"😈👅💋",title:"Oho, zgjedhje interesante…",text:"S'po të gjykoj… mirë, veç pak po buzëqeshi. 😏"},
+ {emoji:"🥰💘✨",title:"Sa e lezetshme kjo përgjigje!",text:"Pikë për sharm. Ndoshta buzëqeshja jote po ta kryn gjysmën e punës. 💗"},
+ {emoji:"😉🌹💋",title:"E shënova, bukuroshe.",text:"Edhe një sen ma shumë që po e kuptoj për ty. Vazhdo. ✨"},
+ {emoji:"😛💞🦋",title:"Po ma bon kuizin interesant.",text:"Pak mister e bon njohjen edhe ma të bukur. 💌"}
+];
+let index=0,score=0,locked=false;const $=id=>document.getElementById(id);
+function shuffle(list){const arr=[...list];for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+function renderQuestion(){locked=false;const item=questions[index];$("counter").textContent=`Pytja ${index+1} prej ${questions.length}`;$("progress").style.width=`${index/questions.length*100}%`;$("question").textContent=item.q;$("options").innerHTML="";
+ const choices=shuffle(item.a.map((label,i)=>({label,correct:i===item.correct})));choices.forEach((choice,i)=>{const b=document.createElement("button");b.className="option";const letter=document.createElement("span");letter.className="letter";letter.textContent=String.fromCharCode(65+i);const label=document.createElement("span");label.textContent=choice.label;b.append(letter,label);b.addEventListener("click",()=>choose(choice,b));$("options").appendChild(b);});
+ $("feedback").classList.remove("show");$("nextBtn").disabled=true;$("nextBtn").textContent=index===questions.length-1?"Shihe rezultatin 💌":"Tjetra 💗";$("scoreNote").textContent="Pikët po mblidhen fshehtas…";}
+function choose(choice,button){if(locked)return;locked=true;if(choice.correct)score++;document.querySelectorAll(".option").forEach(b=>b.disabled=true);button.classList.add("selected");const r=reactions[Math.floor(Math.random()*reactions.length)];$("reaction").textContent=choice.correct?"🥳💖✨":"😈👅💋";$("feedbackTitle").textContent=choice.correct?"Saktë, e qëllove! 💖":"Gabim, bukuroshe! 😏";$("feedbackText").textContent=choice.correct?"Bravo, po doket që po m'njeh mirë! "+questions[index].flirt:"Jo këtë herë 😜 Provo prapë në pyetjen tjetër! "+questions[index].flirt;$("feedback").classList.add("show");$("nextBtn").disabled=false;$("scoreNote").textContent=choice.correct?"E qëllove 💖":"Kësaj here gabim 💋";}
+$("startBtn").addEventListener("click",()=>{$("welcome").classList.add("hidden");$("quiz").classList.remove("hidden");renderQuestion();});
+$("nextBtn").addEventListener("click",()=>{index++;if(index<questions.length){renderQuestion();return;}$("quiz").classList.add("hidden");$("result").classList.remove("hidden");$("progress").style.width="100%";const pct=score/questions.length;$("resultEmoji").textContent=pct>=.8?"💘🥰🌹":pct>=.5?"😏💋✨":"🦋💌💗";$("resultTitle").textContent=pct>=.8?"Okej, tash ma ke vëmendjen. 💖":pct>=.5?"Pak mister osht gjithmonë i mirë. 😏":"Po doket që duhet me u njoftë ma mirë. 💌";$("resultText").textContent=`I qëllove ${score} prej ${questions.length} përgjigjeve të Artit. Po sinqerisht, pikët s'munden me mat kiminë. Nëse je kureshtare, shkrujma, pytmë diçka të vërtetë, edhe ta shohim a na ec muhabeti. 🌹`;});
+$("againBtn").addEventListener("click",()=>{index=0;score=0;$("result").classList.add("hidden");$("welcome").classList.remove("hidden");});
+$("shareBtn").addEventListener("click",async()=>{const invite="Hej 💌 E bona një kuiz të vogël për mu — a po don me pa sa mirë e njeh Artin? 😏💗 https://artii.github.io/arti-quiz/";try{await navigator.clipboard.writeText(invite);$("shareStatus").textContent="Ftesa u kopju! Ngjite në mesazh. 💋";}catch(e){$("shareStatus").textContent=invite;}});
+</script>
+</body>
+</html>
