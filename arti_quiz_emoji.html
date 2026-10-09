@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Well Do You Know Arti?</title>
+<style>
+:root{--pink:#ff32d2;--purple:#9b5cff;--bg:#080514;--panel:#100923;--text:#f8edff}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at top right,#27104b 0,transparent 40%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh;display:grid;place-items:center;padding:22px}
+main{width:min(720px,100%);background:linear-gradient(145deg,#130a29,#080514);border:1px solid #a64dff;border-radius:24px;padding:clamp(20px,5vw,38px);box-shadow:0 0 35px #a52cff28}
+h1{margin:0;color:#ff75df;font-size:clamp(1.8rem,5vw,2.6rem)}.sub{color:#cbb7ed;margin:8px 0 22px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.count{white-space:nowrap;color:#f6a8ff;font-weight:700}.track{height:8px;background:#382052;border-radius:99px;margin:12px 0 28px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--purple),var(--pink));transition:width .25s}
+h2{font-size:1.35rem;line-height:1.4;margin:0 0 20px}
+.answers{display:grid;gap:10px}.answer{width:100%;text-align:left;padding:15px 17px;border-radius:15px;border:1px solid #7142a7;background:#0b071a;color:var(--text);font-size:1rem;cursor:pointer;transition:.18s}.answer:hover{border-color:var(--pink);transform:translateY(-1px)}.answer.selected{border-color:var(--pink);background:#381047;box-shadow:0 0 15px #ff32d244}.answer:disabled{cursor:default}
+.feedback{display:none;text-align:center;margin-top:22px;padding:20px;border:1px solid #b44dff;border-radius:18px;background:#180b29}.feedback.show{display:block;animation:pop .25s ease}.emoji{font-size:2.7rem;letter-spacing:5px}.feedback h3{margin:8px 0;color:#ff7cde}.feedback p{margin:6px 0 0;color:#e6d5ff}
+.actions{display:flex;justify-content:flex-end;margin-top:22px;gap:10px}.btn{border:0;border-radius:999px;padding:12px 22px;background:linear-gradient(90deg,#a943ff,#ff2dc7);color:white;font-weight:800;cursor:pointer}.btn:disabled{opacity:.35;cursor:not-allowed}.result{text-align:center}.result .emoji{font-size:3.4rem}
+@keyframes pop{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+  <div class="top"><h1>How Well Do You Know Arti? 💖</h1><span class="count" id="count">1 / 5</span></div>
+  <p class="sub">Answer the questions and see how well you really know me… 😏</p>
+  <div class="track"><div class="fill" id="fill"></div></div>
+  <section id="quiz">
+    <h2 id="question"></h2>
+    <div class="answers" id="answers"></div>
+    <div class="feedback" id="feedback" aria-live="polite">
+      <div class="emoji" id="feedbackEmoji">😈👅💋</div>
+      <h3 id="feedbackTitle"></h3><p id="feedbackText"></p>
+    </div>
+    <div class="actions"><button class="btn" id="next" disabled>Next →</button></div>
+  </section>
+  <section class="result" id="result" hidden>
+    <div class="emoji" id="resultEmoji">😈👅💋</div><h2 id="resultTitle"></h2><p id="resultText"></p>
+    <button class="btn" id="restart">Play again ↻</button>
+  </section>
+</main>
+<script>
+const questions = [
+ {q:"What kind of person is Arti?", a:["Hard fucker","Quiet bookworm","Total neat freak","Always sleepy"], correct:[0]},
+ {q:"What kind of girls does Arti like?", a:["Bookworms and gamers","Latinas and Housewives","Athletes and artists","Shy introverts"], correct:[1]},
+ {q:"What is Arti’s favourite position?", a:["Doggy style","Cowgirl","69","All of the above"], correct:[3]},
+ {q:"What’s more important to Arti in a woman?", a:["Style","Money","Brain","Popularity"], correct:[2]},
+ {q:"What does Arti love to be called?", a:["Boss","Daddy, Papi, Papasito","King","Bestie"], correct:[1]}
+];
+const reactions = [
+ {emoji:"😈👅💋", title:"You chose your answer!", text:"Let's see if you know Arti that well… 😏"},
+ {emoji:"🥵😈👅", title:"Ooh, bold choice!", text:"Keep going and see how you score. 💋"},
+ {emoji:"😛💋✨", title:"Answer locked in!", text:"Ready for the next one? 😈"}
+];
+let index=0, score=0, chosen=null;
+const $=id=>document.getElementById(id);
+function render(){
+ chosen=null;
+ const item=questions[index];
+ $("count").textContent=`${index+1} / ${questions.length}`;
+ $("fill").style.width=`${index/questions.length*100}%`;
+ $("question").textContent=item.q;
+ $("answers").innerHTML="";
+ item.a.forEach((label,i)=>{
+  const b=document.createElement("button"); b.className="answer"; b.textContent=String.fromCharCode(65+i)+".  "+label;
+  b.addEventListener("click",()=>selectAnswer(i,b)); $("answers").appendChild(b);
+ });
+ $("feedback").classList.remove("show"); $("next").disabled=true; $("next").textContent=index===questions.length-1?"See my score →":"Next →";
+}
+function selectAnswer(i,button){
+ if(chosen!==null)return;
+ chosen=i;
+ const item=questions[index]; if(item.correct.includes(i))score++;
+ document.querySelectorAll(".answer").forEach(b=>b.disabled=true);
+ button.classList.add("selected");
+ const reaction=reactions[Math.floor(Math.random()*reactions.length)];
+ $("feedbackEmoji").textContent=reaction.emoji;
+ $("feedbackTitle").textContent=item.correct.includes(i)?"You got it! 😈":"Not quite… 😛";
+ $("feedbackText").textContent=reaction.text;
+ $("feedback").classList.add("show"); $("next").disabled=false;
+}
+$("next").addEventListener("click",()=>{
+ index++;
+ if(index<questions.length){render();return;}
+ $("quiz").hidden=true;$("result").hidden=false;$("fill").style.width="100%";$("count").textContent="Done!";
+ const pct=score/questions.length;
+ $("resultEmoji").textContent=pct===1?"😈👅💋":pct>=.6?"🥵😛💖":"😏👅✨";
+ $("resultTitle").textContent=`You scored ${score} out of ${questions.length}!`;
+ $("resultText").textContent=pct===1?"Okay, you know Arti way too well. 😈💋":pct>=.6?"Not bad… but there’s still more to learn about Arti. 😛":"Looks like you need to get to know Arti a little better. 😏";
+});
+$("restart").addEventListener("click",()=>{index=0;score=0;$("quiz").hidden=false;$("result").hidden=true;render();});
+render();
+</script>
+</body>
+</html>
